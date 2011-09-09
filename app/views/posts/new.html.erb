@@ -1,0 +1,29 @@
+<%= form_for(@post, :remote => true, :url => {:action => 'create'}, :html => {:id => "form_id"} ) do |f| %>
+
+<% if @post.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+     <ul>
+     <% @post.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+
+ <div class="field">
+   <%= f.label :sender_address %><br />
+   <%= f.email_field :sender_address, {:html => {:id => "post_email_field"}} %>
+ </div>
+
+ <div class="actions">
+   <%= f.submit %>
+ </div>
+	
+<% end %>
+
+<div id="foobar"></div>
+
+
