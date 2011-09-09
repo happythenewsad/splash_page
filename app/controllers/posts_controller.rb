@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
   
   def create
-    STDERR.puts "in create**********"
     @post = Post.new(params[:post])
     respond_to do |format|
       if @post.save
@@ -22,13 +21,5 @@ class PostsController < ApplicationController
     @post = Post.all
   end
   
-  def ajax_test
-    STDERR.puts "ajax test***********"
-    puts "ajax test*********\n"
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
   
 end
