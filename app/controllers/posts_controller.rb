@@ -9,10 +9,11 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     respond_to do |format|
       if @post.save
-        format.html { redirect_to root_path, :notice => "Thank you for signing up!" }
+        format.html { redirect_to root_path }
         format.js 
       else
-        format.html { render :action => "new" }
+        STDERR.puts "Invalid email address. Not saving."
+        format.html { render :action => "new"}
       end
     end
   end

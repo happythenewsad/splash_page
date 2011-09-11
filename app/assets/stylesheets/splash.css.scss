@@ -1,3 +1,88 @@
 // Place all the styles related to the splash controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+  background-image:url('antenna.jpg')
+}
+
+/*********************************/
+/* Vars */
+/*********************************/
+$logo-height: 90px;
+$center-box-height: 400px;
+$center-box-padding: 30px;
+$alert-green: #66FF33;
+
+
+
+/*********************************/
+/* ID's */
+/*********************************/
+
+#center-box {
+  padding: $center-box-padding;
+  margin-left:auto;
+  margin-right:auto;
+  width: 400px;
+  height: $center-box-height;
+  
+
+}
+
+#center-box #desc {
+
+}
+
+#center-box .spacer {
+	@extend .spacer;
+	height: $center-box-height - $logo-height - $center-box-padding - 160px;
+}
+
+#center-box {
+  background: none repeat scroll 0 0 rgba(1, 1, 1, 0.2);
+}
+
+#logo {
+	margin-left:auto;
+	margin-right:auto;
+	height: $logo-height;
+}
+
+#logo-wrapper {
+  text-align: center;
+}
+
+#sent-alert {
+	
+	padding: 0 0 0 20px;
+	color: $alert-green;
+	font-weight:bold;
+	display: none;
+}
+
+
+
+/*********************************/
+/* Classes */
+/*********************************/
+
+.form-container {
+
+}
+
+.form-container .field {
+  float:left;
+}
+
+.form-container .actions {
+  float:right;
+}
+
+.spacer {
+  height:100px;
+}
+
+
+

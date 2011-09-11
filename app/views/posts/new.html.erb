@@ -1,29 +1,53 @@
-<%= form_for(@post, :remote => true, :url => {:action => 'create'}, :html => {:id => "form_id"} ) do |f| %>
-
-<% if @post.errors.any? %>
-   <div id="error_explanation">
-     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-     <ul>
-     <% @post.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-     </ul>
-   </div>
- <% end %>
+<div class="spacer"></div>
 
 
- <div class="field">
-   <%= f.label :sender_address %><br />
-   <%= f.email_field :sender_address, {:html => {:id => "post_email_field"}} %>
- </div>
+<div id="center-box">
 
- <div class="actions">
-   <%= f.submit %>
- </div>
+	<div id="logo-wrapper">
+		<%= image_tag 'logo.png', :id => 'logo'%>
+	</div>
 	
-<% end %>
+	<br>
+	<p id="desc">
+		    find work-friendly coffee shops,
+		    libraries, hotel lobbies... anywhere you can just
+		    walk in to get work done for an hour or an afternoon
+	</p>
+	
+	<div class="spacer"></div>
+	<p><strong>get on the list for our private beta:</strong></p>
 
-<div id="foobar"></div>
+	<%= form_for(@post, :remote => true, :url => {:action => 'create'}, :html => {:id => "form_id"} ) do |f| %>
+
+	<% if @post.errors.any? %>
+	   <div id="error_explanation">
+	     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+	     <ul>
+	     <% @post.errors.full_messages.each do |msg| %>
+	       <li><%= msg %></li>
+	     <% end %>
+	     </ul>
+	   </div>
+	 <% end %>
+
+	 <div class="form-container">
+	 	<div class="field">
+		   <%= f.email_field :sender_address, {:id => "post_email_field", :placeholder => 'email@address.com'} %>
+		 </div>
+		
+		<span id="sent-alert">Sent!</span>
+		
+		 <div class="actions">
+		   <%= f.submit :value => 'Send' %>
+		 </div>
+	 </div>
+
+	<% end %>
+
+</div>
+
+
+
 
 
